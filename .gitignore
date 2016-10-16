@@ -17,10 +17,17 @@
 
 ### NetBeans ###
 nbproject/private/
-build/
-!build/libs/*.jar
 nbbuild/
 dist/
 nbdist/
 out/
 .nb-gradle/
+src/main/resources/static/
+src/main/resources/templates/
+
+
+build/*
+!build
+!build/libs
+!build/libs/*.jar
+build/libs/*.jar.original
