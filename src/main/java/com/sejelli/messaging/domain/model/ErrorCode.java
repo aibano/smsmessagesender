@@ -16,6 +16,7 @@ public enum ErrorCode {
     WRONG_RECIEVER_NUMBER(15),
     EMPTY_SENDER_NAME(16),
     WRONG_UNICODE(17),
+    USER_BLOCKED(18),
     INVALID_FORMAT(110);
 
 
