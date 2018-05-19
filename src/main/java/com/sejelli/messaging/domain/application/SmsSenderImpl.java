@@ -41,6 +41,11 @@ public class SmsSenderImpl implements SmsSender {
             return;
         }
 
+        if(this.latestSettings.getUsername() == null || this.latestSettings.getUsername().isEmpty()) {
+            log.warn("Username cannot be empty");
+            return;
+        }
+
 
         byte unsent = 0;
         List<SmsMessage> pendingMessages = this.smsMessageRepository.findBySent(unsent);
@@ -81,7 +86,11 @@ public class SmsSenderImpl implements SmsSender {
             moreThanOne = true;
 
             this.latestSettings = settingRecord;
-            this.smsServicerProvider.setSetting(settingRecord);
+            try {
+                this.smsServicerProvider.setSetting(settingRecord);
+            } catch (Exception ex){
+                this.latestSettings = null;
+            }
         }
         // In case no settings has been found
         if(moreThanOne == false)

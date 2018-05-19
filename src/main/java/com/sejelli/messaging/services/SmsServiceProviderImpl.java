@@ -26,10 +26,10 @@ public class SmsServiceProviderImpl implements SmsServicerProvider {
     @Override
     public SmsServicerProvider setSetting(Setting setting) {
         this.setting = setting;
-        if(setting.getProvider().getId() == 1) // YAMAMAH
+        if(setting.getProvider().getId() == 1L) // YAMAMAH
             this.servicerProvider = new YamamahServiceProvider(setting.getUsername(),
                     setting.getPassword());
-        else if(setting.getProvider().getId() == 2) // mobily.com
+        else if(setting.getProvider().getId() == 2L) // mobily.com
             this.servicerProvider = new MobilyServiceProvider(setting.getUsername(),
                     setting.getPassword());
         /*else if(setting.getProvider().getId() == 3) // mqamsms.com
