@@ -30,7 +30,7 @@ public class ScheduledTasks {
 
     @Scheduled(fixedRate = 60000)
     public void reloadSettings() {
-        log.info("Reloading the settings", dateFormat.format(new Date()));
+        log.info("Reloading the settings...", dateFormat.format(new Date()));
         this.smsSender.reloadSetting();
     }
 }
