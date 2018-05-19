@@ -89,6 +89,7 @@ public class SmsSenderImpl implements SmsSender {
             try {
                 this.smsServicerProvider.setSetting(settingRecord);
             } catch (Exception ex){
+                log.error("Exception Occured While reloading the settings:" + ex.getMessage());
                 this.latestSettings = null;
             }
         }
