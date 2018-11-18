@@ -15,6 +15,7 @@ public class SmsMessage {
     private String message;
     private String sender;
     private String receiver;
+    private String error;
     private byte sent;
     private Date created;
     private Date modified;
@@ -53,5 +54,13 @@ public class SmsMessage {
         } else {
             this.sent = sent.getValue();
         }
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

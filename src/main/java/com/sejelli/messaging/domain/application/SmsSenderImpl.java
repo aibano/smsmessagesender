@@ -61,6 +61,7 @@ public class SmsSenderImpl implements SmsSender {
             }
             else{
                 messageRecord.setSent(SendStatus.FAILED);
+                messageRecord.setError(errorCode.name());
                 log.warn("Message with ID: {}, failed to sent with error code: {}", messageRecord.getId(),
                         errorCode.name());
             }
