@@ -40,7 +40,7 @@ public class YamamahServiceProvider implements SmsServicerProvider {
             restTemplate.getMessageConverters()
                     .add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
 
-            YamamahResponse response = restTemplate.postForObject("http://api.yamamah.com/SendSMS",
+            YamamahResponse response = restTemplate.postForObject("https://api.yamamah.com/SendSMS",
                     yamamahMessageFormat,
                     YamamahResponse.class);
 
